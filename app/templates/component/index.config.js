@@ -1,0 +1,6 @@
+/*@ngInject*/
+module.exports = (
+	
+) => {
+	
+};
