@@ -3,9 +3,19 @@
 			url          : '<%-stateUrl%>',
 			<%- is(isStateAbstract) %>abstract     : true,
 			
-			templateUrl  : 'components<%-componentPath ? '.'+componentPath : ''%>.<%-componentName%>.<%-subcomponentName%>.html',
-			controller   : 'components<%-componentPath ? '.'+componentPath : ''%>.<%-componentName%>.<%-subcomponentName%>',
-			controllerAs : 'vm',
+<% if ( stateViewName ) { %>
+			views : {
+				'<%-stateViewName%>' : {
+					<%- is(isTemplate) %>templateUrl  : '<%-subcomponentFullPath%>.html',
+					<%- is(isController) %>controller   : '<%-subcomponentFullPath%>',
+					<%- is(isController) %>controllerAs : 'vm',
+				},
+			},
+<% } else { %>
+			<%- is(isTemplate) %>templateUrl  : '<%-subcomponentFullPath%>.html',
+			<%- is(isController) %>controller   : '<%-subcomponentFullPath%>',
+			<%- is(isController) %>controllerAs : 'vm',
+<% } %>
 
 			/*@ngInject*/
 			resolve      : function($q, $ocLazyLoad) {

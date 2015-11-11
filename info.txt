@@ -1,4 +1,0 @@
- mkdir my-component
- cd my-component
- touch index.js index.routes.js index.lazy.js index.html index.less index.controller.js index.run.js
-

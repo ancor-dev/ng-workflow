@@ -24,6 +24,16 @@ var templates = {};
 	templates[file] = fs.readFileSync(tplDir+file);
 });
 
+/**
+ * Components that will be injected to appropriate elements
+ * @type {Object}
+ */
+var DI = {
+	controller : ['Log'],
+	config     : [],
+	run        : ['Log', '$rootScope'],
+};
+
 var schema = {
   properties: {
 		'componentPath' : {
@@ -39,18 +49,38 @@ var schema = {
 		},
 		'stateName' : {
 			default : false,
-			message : 'stateName : if "false" will be base.%componentPath%.%componentName%',
+			message : 'stateName : if "false" will be %componentPath%.%componentName%',
 			before : value => {
 				if ( value != 'false' ) return value;
 
 				var p = prompt.history('componentPath').value;
-				return 'base' + (p ? '.'+String(p) : '') +'.'+ prompt.history('componentName').value;
+				return p +'.'+ prompt.history('componentName').value;
 			},
 		},
 		'stateUrl' : {
 			default : false,
 			message : 'stateUrl : if "false" will be /%componentName%',
 			before : v => '/'+ prompt.history('componentName').value,
+		},
+		'stateViewName' : {
+			default : false,
+			message : 'stateViewName : if parent use named-view. Or "false" if it does not need',
+			before  : v => v == 'false' ? false : v,
+		},
+		'controllerDi' : {
+			default : false,
+			message : 'controllerDi : additional dependencies. example : "$scope,$window,$timeout". Default dependencies : '+DI.controller.join(','),
+			before  : v => v == 'false' ? false : DI.controller.push.apply(DI.controller, v.split(',')),
+		},
+		'configDi' : {
+			default : false,
+			message : 'configDi : additional dependencies. example : "$scope,$window,$timeout". Default dependencies : '+DI.config.join(','),
+			before  : v => v == 'false' ? false : DI.config.push.apply(DI.config, v.split(',')),
+		},
+		'runDi' : {
+			default : false,
+			message : 'runDi : additional dependencies. example : "$scope,$window,$timeout". Default dependencies : '+DI.run.join(','),
+			before  : v => v == 'false' ? false : DI.run.push.apply(DI.run, v.split(',')),
 		},
 		'isState' : {
 			default : 1,
@@ -92,6 +122,8 @@ function handler(err, result)
 				return isOk ? '' : '// ';
 			},
 			cssClass : 'component' + (result.componentPath ? '-'+result.componentPath.replace(/\./g, '-') : '') +'-'+ result.componentName +'-'+ result.subcomponentName,
+			DI : DI,
+			subcomponentFullPath : 'components'+(result.componentPath ? '.'+result.componentPath : '')+'.'+result.componentName+'.'+result.subcomponentName,
 		});
 
 		// Замена всех переменных

@@ -527,10 +527,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "setnex",
+		"height": 112.0,
+		"last_filter": "newroo",
 		"selected_items":
 		[
+			[
+				"newroo",
+				"File: New File Relative to Project Root"
+			],
 			[
 				"setnex",
 				"Set Syntax: JavaScript Next"
@@ -578,10 +582,6 @@
 			[
 				"renam",
 				"File: Rename"
-			],
-			[
-				"newroo",
-				"File: New File Relative to Project Root"
 			],
 			[
 				"pjsa",
@@ -1066,17 +1066,14 @@
 	"expanded_folders":
 	[
 		"/home/toha/Documents/projects/ng-workflow",
-		"/home/toha/Documents/projects/ng-workflow/app",
-		"/home/toha/Documents/projects/ng-workflow/app/commands",
-		"/home/toha/Documents/projects/ng-workflow/app/templates",
 		"/home/toha/Documents/projects/ng-workflow/app/templates/component",
-		"/home/toha/Documents/projects/ng-workflow/app/templates/component-lazy",
-		"/home/toha/Documents/projects/ng-workflow/cabinet",
-		"/home/toha/Documents/projects/ng-workflow/cabinet/index.lazy",
-		"/home/toha/Documents/projects/ng-workflow/cabinet/night.lazy"
+		"/home/toha/Documents/projects/ng-workflow/app/templates/component-lazy"
 	],
 	"file_history":
 	[
+		"/home/toha/Documents/projects/ng-workflow/info.txt",
+		"/home/toha/Documents/projects/ng-workflow/.gitignore",
+		"/home/toha/Desktops/desk/Полезные заметки.txt",
 		"/home/toha/Documents/projects/ng-workflow/app/commands/component-lazy.js",
 		"/home/toha/Documents/projects/ng-workflow/cabinet/order.lazy/index.js",
 		"/home/toha/Documents/projects/ng-workflow/app/templates/component-lazy/index.js",
@@ -1201,10 +1198,7 @@
 		"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/node_modules/bootstrap-webpack/bootstrap.config.less",
 		"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/node_modules/bootstrap-webpack/bootstrap.config.js",
 		"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/src/components/base/components.less",
-		"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/src/components/home/index.html",
-		"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/src/vendor-fix/angular-form-for-bootstrap-tpl.js",
-		"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/src/vendor-fix/angular-form-for.js",
-		"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/src/components/home/index.less"
+		"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/src/components/home/index.html"
 	],
 	"find":
 	{
@@ -1589,6 +1583,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"inf",
+				"info.txt"
+			],
 			[
 				"componen.js",
 				"app/commands/component.js"
@@ -2096,10 +2094,6 @@
 			[
 				"indexhtml",
 				"src/index.html"
-			],
-			[
-				"homecot",
-				"src/features/home/home.controller.js"
 			]
 		],
 		"width": 0.0
@@ -2107,16 +2101,16 @@
 	"select_project":
 	{
 		"height": 510.0,
-		"last_filter": "qsy",
+		"last_filter": "3.1",
 		"selected_items":
 		[
 			[
-				"qsy",
-				"/srv/www/htdocs/test/queenmo-sync/queenmo-sync.sublime-project"
-			],
-			[
 				"3.1",
 				"/srv/www/htdocs/test/webpack/webpack-attempt-3.1/webpack-attempt-3.1.sublime-project"
+			],
+			[
+				"qsy",
+				"/srv/www/htdocs/test/queenmo-sync/queenmo-sync.sublime-project"
 			],
 			[
 				"adva",
@@ -2601,7 +2595,7 @@
 	"selected_group": 0,
 	"settings":
 	{
-		"_vintageous_last_buffer_search": "\\\\n",
+		"_vintageous_last_buffer_search": "php",
 		"_vintageous_last_buffer_search_command": "vi_slash",
 		"_vintageous_last_char_search_command": "vi_f",
 		"_vintageous_last_character_search": ">",

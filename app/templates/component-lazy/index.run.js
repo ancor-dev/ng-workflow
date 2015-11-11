@@ -1,7 +1,6 @@
 /*@ngInject*/
 module.exports = (
-	$rootScope,
-	Log
+	<%-DI.run.join(',\n\t')%>
 ) => {
 	
 };
