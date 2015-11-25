@@ -169,7 +169,7 @@ function make(options)
   	{
   		let index = String( fs.readFileSync(parentIndexJs) );
 
-  		let pattern = /(ngRegister\([\w'.-]+, \[\n+)([\s()\w,'-]+?)(,?)(\n?)([\s]*)\]\)/gmi;
+  		let pattern = /(ngRegister\([\w'\.-]+, \[\n+)([\/\s()\w\.,'-]+?)(,?)(\n?)([\s]*)\]\)/gmi;
   		let match = pattern.exec(index);
   		
 
